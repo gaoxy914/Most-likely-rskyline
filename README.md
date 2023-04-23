@@ -20,6 +20,7 @@ Commands format:
 ```
 ./main DSA/BBA/LSA data n d alpha query c tau
 ```
+|Parameters|Meaning|Example|
 |:---:|---|:---:|
 |data|data type|ind, anti, car, nba|
 |n|data size|10000, ...|
