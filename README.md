@@ -12,7 +12,7 @@ Make directory obj and then run makefile.
 
 ## Generate nba dataset and car dataset
 
-run python3 nba.py or python3 car.py
+Run python3 nba.py or python3 car.py then move nba.data or car.dat to data/.
 
 ## Run algorithms
 
