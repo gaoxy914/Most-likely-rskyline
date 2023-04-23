@@ -99,19 +99,6 @@ int main(int argc, char const *argv[]) {
             cout << argv[1] << " prob: " << prob << " total time: " << algmtime << endl;
             mrsky.check_prob(result, prob, F);
             cout << "-------------------------------" << endl;
-        } else if (strcmp(argv[1], "LSA+") == 0) {
-            double tau = atof(argv[8]);
-            gettimeofday(&start, nullptr);
-            prob = mrsky.LSA_PLUS(result, F, tau);
-            gettimeofday(&end, nullptr);
-            seconds = end.tv_sec - start.tv_sec;
-            useconds = end.tv_usec - start.tv_usec;    
-            algmtime = seconds*1000000 + useconds;
-            cout << "-------------------------------" << endl;
-            cout << "n: " << n << " d: " << dim << " alpha: " << alpha << " c: " << c << endl;
-            cout << argv[1] << " prob: " << prob << " total time: " << algmtime << endl;
-            mrsky.check_prob(result, prob, F);
-            cout << "-------------------------------" << endl;
         } else {
             gettimeofday(&start, nullptr);
             int nReduce = mrsky.virtual_region_reduction(F);
@@ -130,16 +117,9 @@ int main(int argc, char const *argv[]) {
                 seconds = end.tv_sec - start.tv_sec;
                 useconds = end.tv_usec - start.tv_usec;
                 algmtime = seconds*1000000 + useconds;
-            } else if (strcmp(argv[1], "IBBA") == 0) {
+            } else if (strcmp(argv[1], "BBA") == 0) {
                 gettimeofday(&start, nullptr);
                 prob = mrsky.IBBA(result, F);
-                gettimeofday(&end, nullptr);
-                seconds = end.tv_sec - start.tv_sec;
-                useconds = end.tv_usec - start.tv_usec;
-                algmtime = seconds*1000000 + useconds;
-            } else if (strcmp(argv[1], "EBBA") == 0) {
-                gettimeofday(&start, nullptr);
-                prob = mrsky.EBBA(result, F);
                 gettimeofday(&end, nullptr);
                 seconds = end.tv_sec - start.tv_sec;
                 useconds = end.tv_usec - start.tv_usec;
